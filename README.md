@@ -6,7 +6,7 @@ Legt euch lokal einen Ordner namens "Datasets" und speichert dort sämtlichen .j
 ### **Needed/Useful Installs**
 pip install pandas  
 pip install nltk  
-pip install sklearn    
+pip install scikit-learn  
 pip install matplotlib  
 pip install seaborn  
 pip install tensorflow  
