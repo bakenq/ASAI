@@ -37,12 +37,14 @@ def predict_helpfulness(review_text):
     # Convert probabilities to binary predictions
     binary_predictions = tf.cast(probabilities > 0.5, tf.int32)
 
-    # Print helpfulness information
-    #print(binary_predictions.numpy()[0, 0])
-    if binary_predictions.numpy()[0, 0] == 0:
-        return "Review is Helpful"
-    else:
-        return "Review is not Helpful"
+    # Extract confidence level (probability)
+    confidence = 1 - probabilities.numpy()[0, 0]
+
+    # Determine the helpfulness information
+    prediction_result = "Review is Helpful" if binary_predictions.numpy()[0, 0] == 0 else "Review is not Helpful"
+
+    # Return result and confidence
+    return prediction_result, confidence
 
 
 
@@ -54,8 +56,8 @@ def home():
 def predict():
     if request.method == 'POST':
         review = request.form['review']
-        result = predict_helpfulness(review)
-        return render_template('index.html', review=review, result=result)
+        prediction_result, confidence = predict_helpfulness(review)
+        return render_template('index.html', review=review, result=prediction_result, confidence=confidence)
 
 if __name__ == '__main__':
     app.run(debug=True)
