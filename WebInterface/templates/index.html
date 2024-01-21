@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Helpfulness Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Review Helpfulness Predictor</h1>
-    <form action="/predict" method="post">
-        <label for="review">Enter your review:</label><br>
-        <textarea name="review" id="review" rows="4" cols="50">{{ review }}</textarea><br>
-        <input type="submit" value="Predict">
-    </form>
-    {% if result %}
-        <p>Result: {{ result }}</p>
-        <p>Confidence: {{ confidence }}</p>
-    {% endif %}
+    <div class="container">
+        <h1>Review Helpfulness Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="review">Enter your review:</label><br>
+            <textarea name="review" id="review" rows="4" cols="50">{{ review }}</textarea><br>
+            <input type="submit" value="Predict">
+        </form>
+        {% if result %}
+            <p>Result: {{ result }}</p>
+            <p>Confidence: {{ confidence }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>
