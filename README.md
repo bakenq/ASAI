@@ -5,7 +5,7 @@
 
 ## **Datasets**
 Datasets Ordner ist nicht im Repo enthalten!   
-Lokale Erstellund von "Datasets"-Ordner benötigt (siehe Referenz für Ordner-Struktur).  
+Lokale Erstellung von "Datasets"-Ordner benötigt (siehe Referenz für Ordner-Struktur).  
 [Kaggle: Amazon Reviews (Cellphones and Accessories)](https://www.kaggle.com/datasets/abdallahwagih/amazon-reviews/data)  
 [Kaggle: Amazon Reviews (Books)](https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews/) 
 
